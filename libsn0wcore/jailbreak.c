@@ -3,6 +3,7 @@
  */
 
 #include "core.h"
+#include <assert.h>
 
 extern char *kernelcache;
 extern char *bootlogo;
@@ -350,6 +351,15 @@ out:
 
 	if (temporaryDict != NULL)
 		urlKey = (StringValue *) getValueByKey(temporaryDict, "URL");
+
+	if(url) {
+		char *_new = malloc(512);
+		assert(_new);
+		snprintf(_new, 512, "file://%s", url);
+		urlKey->value = _new;
+		device->url = _new;
+	}
+
 	if (urlKey != NULL) {
 		char *p = NULL, dup[256];
 		int len;

@@ -14,7 +14,7 @@ AC_INIT(opensn0w, 2.0.0, support@beige-box.com)
 AC_CONFIG_AUX_DIR(autoconf)
 
 AC_CONFIG_HEADER(include/config.h)
-AC_PREFIX_DEFAULT(~/opensn0w)
+AC_PREFIX_DEFAULT(/usr/local/opensn0w)
 
 AC_GNU_SOURCE
 AC_SYS_LARGEFILE
